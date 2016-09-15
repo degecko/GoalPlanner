@@ -7,7 +7,7 @@ app.controller('ListCtrl', function ($scope) {
     	if (goals) {
     	    localStorage.goals = JSON.stringify(goals);
         }
-    }, true);$scope.goals = localStorage.goals ? JSON.parse(localStorage.goals) : [];
+    }, true);
 });
 
 app.directive('photoRotator', function () {

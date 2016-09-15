@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="GoalPlanner">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Goal Planner</title>
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css" />
+    <link rel="stylesheet/less" type="text/css" href="less/style.less" />
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+
+<photo-rotator></photo-rotator>
+
+<div id="list" ng-controller="ListCtrl">
+    <h1>Goal Planner,</h1>
+    <p>because a goal without a plan is only a wish.</p>
+
+    <ul>
+        <li ng-repeat="goal in goals track by $index">
+            <i class="close icon" ng-click="goals.splice($index, 1)"></i>
+            <input ng-model="goals[$index]" />
+        </li>
+        <li id="add-goal" ng-click="goals.push('')">
+            <i class="plus icon"></i>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
